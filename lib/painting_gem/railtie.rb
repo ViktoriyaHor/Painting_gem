@@ -3,9 +3,10 @@
 require 'rails'
 
 module PaintingGem
+
   class MyRailtie < Rails::Railtie
-    rake_tasks do
-      load "tasks/task.rb"
+    config.after_initialize do
+      puts PaintingGem::Paint.new.run
     end
   end
 end
