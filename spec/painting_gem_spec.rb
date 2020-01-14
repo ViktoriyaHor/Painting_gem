@@ -1,3 +1,7 @@
+# frozen_string_literal: true
+
+require 'spec_helper'
+
 RSpec.describe PaintingGem do
   it "has a version number" do
     expect(PaintingGem::VERSION).not_to be nil
