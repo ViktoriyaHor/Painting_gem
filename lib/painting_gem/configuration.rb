@@ -4,11 +4,11 @@ module PaintingGem
 
   class << self
     attr_accessor :configuration
-  end
 
-  def self.configure
-    self.configuration #||= Configuration.new
-    yield(configuration)
+    def configure
+      @configuration ||= Configuration.new
+      yield(configuration) if block_given?
+    end
   end
 
   class Configuration
@@ -20,12 +20,6 @@ module PaintingGem
       gem_root = spec.gem_dir
       gem_file_path = gem_root + "/lib/file.txt"
       @file_path = gem_file_path
-    end
-
-    def run
-      File.foreach( @file_path ) do |line|
-        puts line
-      end
     end
   end
 end

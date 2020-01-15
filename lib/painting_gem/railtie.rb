@@ -6,7 +6,9 @@ module PaintingGem
 
   class MyRailtie < Rails::Railtie
     config.after_initialize do
-      PaintingGem::Configuration.new.run
+      File.foreach( PaintingGem.configuration.file_path ) do |line|
+        puts line
+      end
     end
   end
 end
