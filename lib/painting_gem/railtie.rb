@@ -12,5 +12,4 @@ module PaintingGem
       end
     end
   end
-
 end

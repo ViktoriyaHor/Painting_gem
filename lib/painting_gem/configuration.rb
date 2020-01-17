@@ -30,4 +30,3 @@ module PaintingGem
     end
   end
 end
-
