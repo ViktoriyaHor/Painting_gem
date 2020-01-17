@@ -9,6 +9,9 @@ module PaintingGem
       @configuration ||= Configuration.new
       yield(configuration) if block_given?
     end
+    def reset
+      @configuration = Configuration.new
+    end
   end
 
   class Configuration
@@ -16,10 +19,14 @@ module PaintingGem
     attr_accessor :file_path
 
     def initialize
-      spec = Gem::Specification.find_by_name("painting_gem")
-      gem_root = spec.gem_dir
-      gem_file_path = gem_root + "/lib/file.txt"
       @file_path = gem_file_path
+    end
+
+    private
+
+    def gem_file_path
+      gem_root = File.expand_path '../..', __FILE__
+      gem_root + "/file.txt"
     end
   end
 end

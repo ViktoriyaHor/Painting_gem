@@ -8,13 +8,15 @@ Gem::Specification.new do |spec|
 
   spec.summary       = "painting_gem"
   spec.description   = "displays the text in the logs"
-  #spec.homepage      = "http://localhost:3000"
+  spec.homepage      = "http://localhost:3000"
   spec.license       = "MIT"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.3.0")
 
   spec.add_development_dependency "bundler"
   spec.add_development_dependency "rake"
   spec.add_development_dependency "rspec"
+  spec.add_development_dependency "rails"
+
   spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
 
   #spec.metadata["homepage_uri"] = spec.homepage
