@@ -53,7 +53,6 @@ The command is created config/initializers/painting_gem.rb
 Change these configs in your file, for example:
 
 PaintingGem.configure do |config|
-  # Set this options to what makes sense for you
   config.file_path = 'lib/file.txt'
 end
 
